@@ -49,4 +49,15 @@ def get_pairs(nums):
         for num2 in nums:
             print(num,num2)
 
-get_pairs(pairs)
+#get_pairs(pairs)
+
+
+# space complexity - O(n) - size of new data structure grows linearly depending on size of input
+
+def growing_array(n):
+    hi_array = []
+    for i in range(n):
+        hi_array.append('hi')
+    return hi_array
+
+print(growing_array(6))
