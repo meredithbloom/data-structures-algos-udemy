@@ -1,3 +1,43 @@
+// SPACE COMPLEXITY
+
+function booooo(n) {
+  for (let i = 0; i < n.length; i++) {
+    console.log('boooooo!')
+  }
+}
+
+booooo([1, 2, 3, 4, 5])
+
+// time complexity is O(n), because number of steps will increase linear to size of input
+// space complexity is O(1), because the function doesn't take up more space given the size of input. it only ever creates one variable (i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TIME COMPLEXITY
 // What is the Big O of the below function? (Hint, you may want to go line by line)
 function funChallenge(input) {
   let a = 10; // o(1)
@@ -11,11 +51,6 @@ function funChallenge(input) {
   return a; // o(1)
 }
 // BIG O - O(n)
-
-
-
-
-
 
 
 
