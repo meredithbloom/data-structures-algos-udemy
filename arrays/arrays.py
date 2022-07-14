@@ -19,7 +19,7 @@ strings.insert(0, 'z')  # O(n) - depending on size of array
 strings.insert(2, 'g')  # O(n)
 # every other element has to be shifted (iterated through)
 
-print(strings)
+#print(strings)
 
 # array native python methods:
 # append()  adds an element at the end of the list
@@ -44,3 +44,13 @@ print(strings)
 
 #to implement arrays as a stack
 #https://docs.python.org/3/library/collections.html#collections.deque
+
+
+list1 = strings 
+print(list1)
+strings.append('k')
+print(list1)
+list2 = list(list1)
+list1.append('q')
+print(strings, list1)
+print(list2)
