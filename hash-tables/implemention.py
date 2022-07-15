@@ -76,6 +76,19 @@ class Hashtable:
                     key_list.append(self.map[i][0][0])
         print(key_list)
             
+            
+    def values(self):
+        value_list = []
+        for i in range(self.bucket):
+            if self.map[i] != []:
+                if len(self.map[i]) > 1:
+                    for j in range(len(self.map[i])):
+                        value_list.append(self.map[i][j][1])  
+                else:
+                    value_list.append(self.map[i][0][1])      
+        print(value_list)
+        
+    
     
 my_hash_table = Hashtable()
 my_hash_table.put('grapes', 1000)
@@ -89,3 +102,4 @@ my_hash_table.put('brie', 2)
 #print(my_hash_table)
 #print(my_hash_table.get('brie'))
 my_hash_table.keys()
+my_hash_table.values()
