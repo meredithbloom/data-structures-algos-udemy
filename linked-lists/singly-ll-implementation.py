@@ -131,6 +131,7 @@ class SinglyLinkedList:
             second = temp
         self.head.next = None
         self.head = first
+        return self.print_list()
 
 
     # remove tail
@@ -150,4 +151,4 @@ my_linkedlist.lookup(72)
 #my_linkedlist.remove(55)
 my_linkedlist.print_list()
 my_linkedlist.reverse()
-my_linkedlist.print_list()
+#my_linkedlist.print_list()
