@@ -1,5 +1,3 @@
-# 10 --> 5 --> 16
-
 # my_linked_list = {
 #     'head': {
 #         'value': 10,
@@ -66,11 +64,13 @@ class LinkedList:
         index = 0
         while index < self.length:
             if current_node.data == value:
+                print(current_node)
                 return current_node
             else:
                 current_node = current_node.next
                 index += 1
-        return "value does not exist in linked list"
+        print ("value does not exist in linked list")
+        return -1
     
     
     def insert(self, index, value):
@@ -100,8 +100,21 @@ class LinkedList:
         print(values)
     
     
-    def delete(self, value):
-        pass
+    def remove(self, value):
+        current = self.head 
+        index = 0
+        next_node = current.next
+        while index < self.length:
+            if next_node.data == value:
+                next_node = next_node.next 
+                current.next = next_node
+                return
+            else:
+                current = current.next
+                next_node = current.next 
+                index += 1
+        print("value not present in linked list")
+        return -1
 
 
 
@@ -112,6 +125,8 @@ my_linkedlist.append(16)
 #print(my_linkedlist)
 my_linkedlist.insert(2, 55)
 #print(my_linkedlist)
-print(my_linkedlist.lookup(55))
-print(my_linkedlist.lookup(72))
+my_linkedlist.lookup(55)
+my_linkedlist.lookup(72)
+my_linkedlist.print_list()
+my_linkedlist.remove(55)
 my_linkedlist.print_list()
