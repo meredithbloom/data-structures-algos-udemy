@@ -108,6 +108,7 @@ class LinkedList:
             if next_node.data == value:
                 next_node = next_node.next 
                 current.next = next_node
+                self.length -= 1
                 return
             else:
                 current = current.next
