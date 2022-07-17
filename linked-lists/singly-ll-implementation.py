@@ -22,7 +22,7 @@ class Node:
             
 
 
-class LinkedList:
+class SinglyLinkedList:
     def __init__(self, value = None):
         if value != None:
             new_head = Node(value)
