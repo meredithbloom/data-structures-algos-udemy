@@ -118,12 +118,27 @@ class SinglyLinkedList:
         return -1
 
 
+    def reverse(self):
+        if self.length == 1:
+            return self.head 
+        first = self.head 
+        self.tail = self.head
+        second = first.next
+        while second != None:
+            temp = second.next
+            second.next = first 
+            first = second
+            second = temp
+        self.head.next = None
+        self.head = first
+
+
     # remove tail
     def pop(self):
         self.tail = None
 
 
-my_linkedlist = LinkedList(10)
+my_linkedlist = SinglyLinkedList(10)
 #print(my_linkedlist)
 my_linkedlist.append(5)
 my_linkedlist.append(16)
@@ -132,6 +147,7 @@ my_linkedlist.insert(2, 55)
 #print(my_linkedlist)
 my_linkedlist.lookup(55)
 my_linkedlist.lookup(72)
+#my_linkedlist.remove(55)
 my_linkedlist.print_list()
-my_linkedlist.remove(55)
+my_linkedlist.reverse()
 my_linkedlist.print_list()
