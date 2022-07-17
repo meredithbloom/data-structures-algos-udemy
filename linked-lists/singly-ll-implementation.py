@@ -18,8 +18,7 @@ class Node:
         self.next = None
 
     def __str__(self):
-        return ('{ value: '+ str(self.data) + 
-            ' next: {' + str(self.next)+'}')
+        return ('{ value: '+ str(self.data) + ' next: {' + str(self.next)+'}')
             
 
 
@@ -100,6 +99,7 @@ class LinkedList:
         print(values)
     
     
+    # remove value, not by index
     def remove(self, value):
         current = self.head 
         index = 0
@@ -117,6 +117,10 @@ class LinkedList:
         print("value not present in linked list")
         return -1
 
+
+    # remove tail
+    def pop(self):
+        self.tail = None
 
 
 my_linkedlist = LinkedList(10)
