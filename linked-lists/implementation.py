@@ -39,7 +39,7 @@ class LinkedList:
 
 
     def __str__(self):
-        return ('head: ' + str(self.head) + '}')
+        return ('length: ' + str(self.length) + ', head: ' + str(self.head) + '}')
 
 
     def append(self, value):
@@ -61,11 +61,57 @@ class LinkedList:
         self.length += 1
 
 
+    def lookup(self, value):
+        current_node = self.head
+        index = 0
+        while index < self.length:
+            if current_node.data == value:
+                return current_node
+            else:
+                current_node = current_node.next
+                index += 1
+        return "value does not exist in linked list"
+    
+    
+    def insert(self, index, value):
+        new_node = Node(value)
+        current_index = 0
+        current_node = self.head
+        if index >= self.length:
+            self.append(value)
+            return
+        if index == 0:
+            self.prepend(value)
+        while current_index < self.length:
+            if current_index == index-1:
+                current_node.next, new_node.next = new_node, current_node.next
+                self.length += 1
+                break
+            current_node = current_node.next
+            current_index += 1
+        
+    
+    def print_list(self):
+        values = []
+        current_node = self.head
+        while current_node != None:
+            values.append(current_node.data)
+            current_node = current_node.next
+        print(values)
+    
+    
+    def delete(self, value):
+        pass
+
+
 
 my_linkedlist = LinkedList(10)
-print(my_linkedlist)
+#print(my_linkedlist)
 my_linkedlist.append(5)
 my_linkedlist.append(16)
-print(my_linkedlist)
-my_linkedlist.prepend(1)
-print(my_linkedlist)
+#print(my_linkedlist)
+my_linkedlist.insert(2, 55)
+#print(my_linkedlist)
+print(my_linkedlist.lookup(55))
+print(my_linkedlist.lookup(72))
+my_linkedlist.print_list()
