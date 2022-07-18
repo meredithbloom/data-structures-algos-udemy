@@ -23,11 +23,10 @@ class Stack:
         if self.length == 0:
             self.bottom = new_top
             self.top = self.bottom
-            self.length += 1
         else:
             new_top.next = self.top
             self.top = new_top
-            self.length += 1
+        self.length += 1
             
     
     # remove top item in the stack
