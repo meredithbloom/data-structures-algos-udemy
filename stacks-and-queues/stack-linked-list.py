@@ -12,6 +12,7 @@ class Stack:
         self.top = None
         self.bottom = None
         self.length = 0
+
     
     # lets us see the top node
     def peek(self):
@@ -69,3 +70,4 @@ top = myStack.peek()
 print(top)
 myStack.push('apple')
 myStack.print_stack()
+print(myStack)
