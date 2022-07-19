@@ -7,8 +7,9 @@ class TreeNode:
         self.left = None
         self.right = None
     
-    def __str__(self):
-        return('value: ' + str(self.value) + ', left child: ' + str(self.left.value) + ', right child: ' + str(self.right.value))
+    def __str__(self):            
+        return('value: ' + str(self.value) + ', left child: {' + str(self.left) + '}, right child: {' + str(self.right) + '}')
+
 
 class BinarySearchTree:
     def __init__(self):
@@ -75,6 +76,7 @@ tree.insert(7)
 print(tree.lookup(15))
 tree.print_tree()
 print(tree.lookup(55))
+print(tree.lookup(20))
 
 
 #       9
