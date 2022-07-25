@@ -149,6 +149,7 @@ tree.insert(96)
 tree.insert(75)
 print()
 tree.print_tree()
+print(tree.lookup(15))
 
 
 #       9
