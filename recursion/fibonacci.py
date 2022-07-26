@@ -1,6 +1,6 @@
 # given a number N, return the number at Nth index value of the fibonacci sequence
 
-def fibonacci_iterative(number):
+def fibonacci_iterative(number): # O(n)
     fibs = [1,1,2]
     if number > 2:
         for i in range(3, number+1):
@@ -12,7 +12,7 @@ fibonacci_iterative(2)
 fibonacci_iterative(5)    
 print([fibonacci_iterative(number) for number in range(10)])
 
-def fibonacci_recursive(number):
+def fibonacci_recursive(number): # O(n^2)
     if number > 1:
         return fibonacci_recursive(number-2) + fibonacci_recursive(number-1)
     else:
