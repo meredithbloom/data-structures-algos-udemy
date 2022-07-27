@@ -17,9 +17,8 @@ def selection_sort(array):
                 lowest = nums[i]
                 low_index = i 
         swapping = nums[n]
-        nums[n] = lowest
-        nums[low_index] = swapping
-    print(nums)
+        nums[n], nums[low_index] = lowest, swapping
+    return(nums)
         
 
 selection_sort(nums)
