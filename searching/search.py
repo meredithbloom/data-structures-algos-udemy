@@ -13,6 +13,24 @@ def linear_search(needle, haystack):
 
 
 
+numbers = [0,1,4,6,8,40,42,50,53,54,56,58]
+	
 # BINARY SEARCH - # O(log n) time complexity
-def binary_search(needle, haystack):
-	pass
+	# works with sorted list
+def binary_search(needle, haystack, low, high):
+	if high >=low:
+		midpoint = len(haystack)//2
+		left = haystack[low:midpoint]
+		right = haystack[midpoint:high]
+		if needle == haystack[midpoint]:
+			return True
+		elif needle < haystack[midpoint]:
+			return binary_search(needle, left, low, midpoint-1)
+		elif needle > haystack[midpoint]:
+			return binary_search(needle, right, midpoint+1, high)
+	else:
+		return False
+
+
+print(binary_search(56, numbers, 0, len(numbers)-1))
+print(binary_search(43, numbers, 0, len(numbers)-1))
