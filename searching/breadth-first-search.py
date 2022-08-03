@@ -5,18 +5,21 @@
 #takes more memory because we need to keep track of all nodes and their children
 '''
 		9
-  4	  20
-1  6  15  170
+   4	  	20
+ 1   6   15    170
 '''
 #[9, 4, 20, 1, 6, 15, 170]
 
-print('please work')
+#print('please work')
 
 class Node:
 	def __init__(self, val):
 		self.val = val
 		self.left = None
 		self.right = None
+
+	def __repr__(self):
+		return str(self.val)
 
 class BinarySearchTree:
 	def __init__(self):
@@ -61,15 +64,34 @@ class BinarySearchTree:
 		queue.append(current)
 
 		while len(queue) > 0:
+			#print(f'current queue is ' + str(list(queue)))
 			current = queue[0]
+			#print(current.val)
 			del queue[0]
 			mylist.append(current.val)
+			#print(f'current list is ' + str(mylist))
 			if current.left:
+				#print(current.left.val)
 				queue.append(current.left)
 			if current.right:
+				#print(current.right.val)
 				queue.append(current.right)
 
 		return mylist
+
+	def recursive_BFS(self, queue, mylist):
+		if len(queue) == 0:
+			return mylist
+		current = queue[0]
+		del queue[0]
+		mylist.append(current.val)
+		if current.left:
+			#print(current.left.val)
+			queue.append(current.left)
+		if current.right:
+			#print(current.right.val)
+			queue.append(current.right)
+		return self.recursive_BFS(queue, mylist)
 
 
 tree = BinarySearchTree()
@@ -80,7 +102,13 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-
 x = tree.lookup(170)
 print(x)
 print(tree.BFS())
+print(tree.recursive_BFS([tree.root], []))
+
+'''
+		9
+   4	  	20
+ 1   6   15    170
+'''
