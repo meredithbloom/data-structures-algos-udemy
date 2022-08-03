@@ -105,7 +105,8 @@ class BinarySearchTree:
 			queue.append(current.right)
 		return self.recursive_BFS(queue, mylist)
 
-	# in order from right to left regardless of level
+	# DFS implementation
+	# in order from right to left regardless of level	
 	def inorder(self, node, mylist):
 		if node.left != None:
 			self.inorder(node.left, mylist)
