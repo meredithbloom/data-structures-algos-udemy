@@ -147,9 +147,9 @@ x = tree.lookup(170)
 print(x)
 #print(tree.BFS())
 #print(tree.recursive_BFS([tree.root], []))
-print(tree.inorder(tree.root, []))
+#print(tree.inorder(tree.root, []))
 print(tree.preorder(tree.root, []))
-print(tree.postorder(tree.root, []))
+#print(tree.postorder(tree.root, []))
 
 
 # InOrder - [1, 4, 6, 9, 15, 20, 170]

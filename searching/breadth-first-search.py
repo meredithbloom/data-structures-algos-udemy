@@ -102,6 +102,13 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
+tree.insert(150)
+tree.insert(200)
+tree.insert(2)
+tree.insert(-2)
+tree.insert(5)
+
+
 x = tree.lookup(170)
 print(x)
 print(tree.BFS())
