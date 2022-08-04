@@ -31,12 +31,12 @@ def memoized_add80():
 	cache1 = {}
 	
 	def memoize(n):
-		if n in cache:
-			return cache[n]
+		if n in cache1:
+			return cache1[n]
 		else:
 			print('first pass')
-			cache[n] = n + 80
-			return cache[n]
+			cache1[n] = n + 80
+			return cache1[n]
 	return memoize
 
 memoized = memoized_add80()
